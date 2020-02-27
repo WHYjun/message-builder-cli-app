@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "type": "greeting",
+    "expression": [
+      {
+        "text": "Hello",
+        "startHour": 0,
+        "endHour": 5
+      },
+      {
+        "text": "Good morning",
+        "startHour": 6,
+        "endHour": 11
+      },
+      {
+        "text": "Good afternoon",
+        "startHour": 12,
+        "endHour": 17
+      },
+      {
+        "text": "Good evening",
+        "startHour": 18,
+        "endHour": 23
+      }
+    ]
+  }
+]
