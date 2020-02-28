@@ -50,7 +50,7 @@ I create an abstract class Component for Guest, Company, and Template objects, b
 
 I intentionally make every property public to build this project quickly. To encapsulate the Message object perfectly, properties should be private and each class should have a getter/setter method. This can be one of future improvements in this project.
 
-# Language I picked and why
+## Language I picked and why
 
 I picked Python to build this project. I am quite familiar with working in Python and it is easy to create Command-line applications like this.
 
