@@ -28,7 +28,10 @@ class Greeting(Component):
         print("Oh! The template you chose has greeting.")
         print("Which greeting do you want to add to message?")
         self.print_list()
-        greeting_id = int(input("Type ID: "))
+        try:
+            greeting_id = int(input("Type ID: "))
+        except:
+            Utilities.print_error_message("Wrong Input. ID should be integer.")
         return self.initialize_with_id(greeting_id, tz)
 
     def print_list(self) -> None:

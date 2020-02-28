@@ -20,7 +20,6 @@ class Component(ABC):
                     self.component = data
                     return self
         Utilities.print_error_message("Typed_id is not existed.")
-        raise
 
     @abstractmethod
     def initialize_with_user_input(self) -> int:

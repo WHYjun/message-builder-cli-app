@@ -22,16 +22,14 @@ class Guest(Component):
                     self.reservation = Reservation(guest_json)
                     return self
         Utilities.print_error_message("Typed id is not existed.")
-        raise
 
-    def initialize_with_user_input(self) -> int:
+    def initialize_with_user_input(self) -> object:
         print("Which guest do you want to send a message?")
         self.print_list()
         try:
             guest_id = int(input("Type ID: "))
         except:
             Utilities.print_error_message("Wrong Input. ID should be integer")
-            raise
         return self.initialize_with_id(guest_id)
 
     def get_reservation(self) -> object:
@@ -42,7 +40,7 @@ class Guest(Component):
         for guest in guest_list:
             if guest.get("id") > 0:
                 print(guest.get("id"), guest.get("firstName"),
-                    guest.get("reservation").get("roomNumber"))
+                      guest.get("reservation").get("roomNumber"))
 
     def save(self, new_data: dict) -> None:
         pass

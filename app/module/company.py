@@ -10,14 +10,13 @@ class Company(Component):
         self.component_list = None
         self.path = "./data/Companies.json"
 
-    def initialize_with_user_input(self) -> int:
+    def initialize_with_user_input(self) -> object:
         print("Which company do you want to send a message from?")
         self.print_list()
         try:
             company_id = int(input("Type ID: "))
         except:
             Utilities.print_error_message("Wrong Input. ID should be integer")
-            raise
         return self.initialize_with_id(company_id)
 
     def print_list(self) -> None:

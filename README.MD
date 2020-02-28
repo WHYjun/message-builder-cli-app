@@ -28,6 +28,12 @@ Install the required packages to run this application
 pip3 install -r requirements.txt
 ```
 
+### Create .env file for mode
+
+```bash
+echo "MODE='PROD'" > ./app/.env
+```
+
 ### Run Message Builder App
 
 Start application. Once you start the application, please follow the instruction it gives.
@@ -37,6 +43,12 @@ python app/runner.py
 ```
 
 ## How to verify the correctness of this program
+
+To debug, you should change environment variable first.
+
+```bash
+echo "MODE='DEBUG'" > ./app/.env
+```
 
 I added test cases in json file to verify the correctness of this program to fulfill the functional requirements and handle user inputs. My test plan was to check how this program handles invalid inputs from users, empty data in json file, and additional square brackets not used for placeholder.
 

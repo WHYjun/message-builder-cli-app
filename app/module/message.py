@@ -20,8 +20,8 @@ class Message:
         for key in data.keys():
             val = data.get(key)
             if Utilities.is_blank(str(val)):
-                Utilities.print_error_message("{} data is empty. Please check json file.".format(key))
-                raise
+                Utilities.print_error_message(
+                    "{} data is empty. Please check json file.".format(key))
             if key is "timezone" and Utilities.is_valid_timezone(tz):
                 self.timezone = pytz.timezone(val)
             if isinstance(val, dt):

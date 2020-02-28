@@ -21,7 +21,7 @@ class Template(Component):
             "greeting": "[[greeting]]"
         }
 
-    def initialize_with_user_input(self) -> int:
+    def initialize_with_user_input(self) -> object:
         print("Which template do you want to use?")
         print("If you want to create a new template, please type New")
         self.print_list()
@@ -29,7 +29,7 @@ class Template(Component):
             template_id = input("Type ID: ")
         except:
             Utilities.print_error_message("Wrong Input. ID should be integer")
-            raise
+
         if template_id.lower() == "new":
             new_template = self.create_new_template()
             self.save(new_template)
@@ -56,9 +56,16 @@ class Template(Component):
         temp_title = input("What's the title of template? Title is required.")
         if Utilities.is_blank(temp_title):
             Utilities.print_error_message("Template should have title.")
-            raise
         self.print_placeholders()
-        temp_text = input("Type your template message here with using placeholders above:\n")
+        try:
+            temp_text = input(
+                "Type your template message here with using placeholders above:\n")
+        except:
+            Utilities.print_error_message("Input Error")
+
+        if Utilities.is_blank(temp_text):
+            Utilities.print_error_message("Template should have body message.")
+
         new_template = {
             "id": temp_id,
             "title": temp_title,
