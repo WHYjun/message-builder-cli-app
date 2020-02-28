@@ -74,3 +74,4 @@ At first, I considered C# application, because I am currently using C# .Net Fram
 2. I want to add user verification on top of this project. Now, a user can access any data and send a message to any guest regardless of which hotel the user works at. To do this, we should put our data into the database and create relationships among them.
 3. I want users to save new guests and companies as they can save new message templates.
 4. I want to clean up the `Message.populate()` method and try to separate each class. When I designed the project, it seemed better to have one generic method to populate data into a Message object, but it is actually not a better idea. If I have more time, I want to revisit this logic and redesign it.
+5. In addition, I want to create Parser object to load data in meesage template information better. This project is enough for satisfying the functional requirement, but `populate()` method I created is not scalable for complex Message object.
